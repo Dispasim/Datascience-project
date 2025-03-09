@@ -39,23 +39,18 @@ Through further research, I identified a study that outlines a methodology for t
 ### Hyperparameters Tuning
 The first step of the neural network is to convert the images from 128x128 images to a vector while keeping the maximum amount of information possible.
 
-![First half of the neural network](path/to/your/image.png)
 
 For that, we alternate operations of convolution and maxpooling. 
 
 The convolution operation in a CNN applies a small filter (kernel) over an input (e.g., image) to extract features like edges or patterns by performing element-wise multiplications and summing the results, producing a feature map. This process reduces parameters, provides translation invariance, and captures spatial features efficiently.
 
-![Convolution operation](path/to/your/image.png)
 
 Max-pooling is a downsampling operation used in CNNs to reduce the spatial dimensions of feature maps while retaining important features. It divides the input into non-overlapping regions (e.g., 2×2), takes the maximum value from each region, and produces a smaller feature map. This helps reduce computational cost, control overfitting, and focus on dominant features such as edges or textures.
 
-![Maxpooling operation](path/to/your/image.png)
 
 Flatten is a layer in neural networks that converts a multi-dimensional input (e.g., a 2D feature map from convolutional layers) into a 1D vector. This transformation is necessary to connect convolutional layers to fully connected layers for classification or regression tasks.
 
 Now that we have a vector representing the image, we can pass it to a neural network to do regression on it.
-
-![Second half of the neural network](path/to/your/image.png)
 
 However, it is essential to incorporate the data from the dataset. After conducting several experiments, I opted for an alternative neural network that transforms the 15 dimensions into a 32-dimensional vector, which is then aggregated before the final step. This approach ensures that the dataset is assigned the appropriate level of importance in the model.
 
@@ -67,5 +62,3 @@ As I said, I’m disappointed by the results. I am sure that my approach can be 
 
 Also, in the article from which I took inspiration, the author used pretrained algorithms from PyTorch like EfficientNet, SE-ResNext, or NFNet. Maybe it is a better approach than a basic CNN as I did?
 
-## References
-[1] Article deep learning.
